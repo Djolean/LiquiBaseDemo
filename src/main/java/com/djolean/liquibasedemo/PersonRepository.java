@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PersonRepository extends CrudRepository<Person, Long> {
 
-    @Query("SELECT name FROM Person p WHERE p.name LIKE %:personName%")
+    @Query("SELECT Person.name FROM Person p WHERE p.name LIKE %:personName%")
     String findByName(String personName);
 }
